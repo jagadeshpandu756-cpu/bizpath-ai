@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizPath AI - Business Roadmap Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🧭 BizPath AI</h1>
+        <p>AI-Powered Business Roadmap for Beginners</p>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Tell us about yourself</h2>
+
+            <div class="form-row">
+                <div class="field">
+                    <label>Your Name</label>
+                    <input type="text" id="name" placeholder="e.g. Rahul Sharma">
+                </div>
+                <div class="field">
+                    <label>City / Location</label>
+                    <input type="text" id="location" placeholder="e.g. Mumbai, India">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label>Currency</label>
+                    <select id="currency">
+                        <option value="INR ₹">INR ₹</option>
+                        <option value="USD $">USD $</option>
+                        <option value="EUR €">EUR €</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Investment Budget</label>
+                    <input type="number" id="budget" placeholder="e.g. 500000">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Select Your Business Interests</label>
+                <div class="chips" id="interests">
+                    <span class="chip" data-value="Food and Beverage">🍕 Food & Beverage</span>
+                    <span class="chip" data-value="Technology">💻 Technology</span>
+                    <span class="chip" data-value="Retail">🛍️ Retail</span>
+                    <span class="chip" data-value="Education">📚 Education</span>
+                    <span class="chip" data-value="Health and Wellness">🏥 Health</span>
+                    <span class="chip" data-value="Agriculture">🌾 Agriculture</span>
+                    <span class="chip" data-value="Manufacturing">🏭 Manufacturing</span>
+                    <span class="chip" data-value="Services">🤝 Services</span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="field">
+                    <label>Risk Level: <span id="riskVal">5</span>/10</label>
+                    <input type="range" id="riskLevel" min="1" max="10" value="5"
+                        oninput="document.getElementById('riskVal').textContent=this.value">
+                </div>
+                <div class="field">
+                    <label>Time Horizon: <span id="timeVal">3</span> years</label>
+                    <input type="range" id="timeHorizon" min="1" max="10" value="3"
+                        oninput="document.getElementById('timeVal').textContent=this.value">
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Your Goal</label>
+                <input type="text" id="goal"
+                    placeholder="e.g. Replace my job, build passive income...">
+            </div>
+
+            <button id="submitBtn" onclick="generateRoadmap()">
+                🚀 Generate My Business Roadmap
+            </button>
+
+        </div>
+
+        <div id="loading" style="display:none">
+            <div class="spinner"></div>
+            <p>AI is analyzing your profile with live market data...<br>
+            This may take 20-30 seconds</p>
+        </div>
+
+        <div id="result" style="display:none">
+            <h2>📋 Your Personalized Business Roadmap</h2>
+            <div id="roadmapContent"></div>
+            <button onclick="window.print()" class="print-btn">
+                🖨️ Print / Save as PDF
+            </button>
+            <button onclick="location.reload()" class="new-btn">
+                🔄 Generate New Roadmap
+            </button>
+        </div>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0a0a1a;
+    color: #f1f5f9;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #1e1b4b, #0a0a1a);
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #f59e0b;
+}
+
+header h1 {
+    font-size: 36px;
+    background: linear-gradient(90deg, #f59e0b, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-container {
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.form-container h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+    color: #f59e0b;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 12px 14px;
+    background: #020617;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    color: #f1f5f9;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #f59e0b;
+}
+
+.field input[type="range"] {
+    padding: 6px 0;
+    accent-color: #f59e0b;
+    border: none;
+    background: transparent;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #1e293b;
+    background: #020617;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.chip.selected {
+    border-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+button#submitBtn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+button#submitBtn:hover {
+    opacity: 0.9;
+}
+
+button#submitBtn:disabled {
+    background: #1e293b;
+    color: #475569;
+    cursor: not-allowed;
+}
+
+#loading {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #1e293b;
+    border-top-color: #f59e0b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#loading p {
+    color: #94a3b8;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+#result {
+    margin-top: 32px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 32px;
+}
+
+#result h2 {
+    color: #f59e0b;
+    font-size: 22px;
+    margin-bottom: 24px;
+}
+
+#roadmapContent h2 {
+    color: #f59e0b;
+    font-size: 18px;
+    margin: 24px 0 10px;
+    border-left: 3px solid #f59e0b;
+    padding-left: 12px;
+}
+
+#roadmapContent h3 {
+    color: #e2e8f0;
+    font-size: 16px;
+    margin: 16px 0 8px;
+}
+
+#roadmapContent p {
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+#roadmapContent ul {
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+
+#roadmapContent li {
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 4px;
+}
+
+#roadmapContent strong {
+    color: #f1f5f9;
+}
+
+.print-btn, .new-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-right: 12px;
+    border: none;
+}
+
+.print-btn {
+    background: #1e293b;
+    color: #94a3b8;
+}
+
+.new-btn {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: white;
+}
